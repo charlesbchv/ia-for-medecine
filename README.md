@@ -10,8 +10,15 @@ Le processus de fonctionnement d’un système de Machine Learning se compose g�
 
 Définition d'une méthodologie basée sur l’ensemble d’extracteurs de caractéristiques (« Ensemble feature extractor ») et sur l’ensemble de classifieurs (« Ensemble selection ») pour optimiser les performances de classification.
 
-1. **Ensemble feature extractor** : Associer plusieurs vecteurs de caractéristiques provenant de différents extracteurs pour exploiter de nouvelles caractéristiques.
-2. **Ensemble selection** : Sélectionner les classifieurs les plus pertinents pour capturer le maximum d’informations à partir des signaux EEG.
+1. **Ensemble feature extractor** : Association de plusieurs vecteurs de caractéristiques provenant de différents extracteurs pour exploiter de nouvelles caractéristiques.
+   - Extraction de caractéristiques utilisant des architectures de réseaux de neurones convolutionnels (CNN) pour capturer des motifs complexes dans les signaux EEG.
+   - Application de techniques de normalisation et de mise à l'échelle pour préparer les données avant l'extraction des caractéristiques.
+   - Utilisation de la technique de Suréchantillonnage Synthétique Minoritaire (SMOTE) pour équilibrer les classes avant l'extraction des caractéristiques.
+
+2. **Ensemble selection** : Sélection des classifieurs les plus pertinents pour capturer le maximum d’informations à partir des signaux EEG.
+   - Implémentation de forêts aléatoires (Random Forest) et de techniques d'agrégation pour améliorer la robustesse et la précision des prédictions.
+   - Évaluation des performances des modèles en utilisant des métriques telles que l'exactitude, la matrice de confusion, et les rapports de classification.
+   - Application de la technique de Boosting pour renforcer les performances des classifieurs en combinant plusieurs modèles faibles pour créer un modèle fort.
 
 ## Démarche
 
