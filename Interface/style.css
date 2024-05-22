@@ -8,44 +8,61 @@
 }
 
 body {
-    color: #fff;
-    background: #09001d;
+    color: #000;
+    background: url('pictures/Brain.webp') no-repeat center center fixed; /* Background image covering the entire page */
+    background-size: cover;
     overflow-x: hidden;
 }
 
 .header {
-    position: fixed;
+    position: fixed; /* Changed from relative to fixed for scroll effect */
     top: 0;
     left: 0;
     width: 100%;
     padding: 10px 5%;
-    background: transparent;
+    background: transparent; /* Changed background to transparent */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 100;
+    transition: top 0.3s; /* Transition effect for hiding and showing */
 }
 
 .logo {
     font-size: 32px;
-    color: #fff;
+    color: #fff; /* Ensure text is readable over the background image */
     text-decoration: none;
     font-weight: 700;
-    filter: drop-shadow(0 0 5px #09001d);
 }
 
 .navbar a {
     font-size: 18px;
-    color: #fff;
+    color: #fff; /* Ensure text is readable over the background image */
     text-decoration: none;
     font-weight: 500;
     margin-left: 20px;
     transition: .3s;
+    position: relative;
 }
 
-.navbar a:hover,
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
 .navbar a.active {
-    color: #220f61;
+    color: #ffcc00;
 }
 
 .main {
@@ -56,15 +73,15 @@ body {
 }
 
 .hero-section {
-    background: url('pictures/Brain.webp') no-repeat center center;
-    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
     color: #fff;
     text-align: center;
-    padding: 80px 5%;
+    padding: 100px 5%;
+    margin-top: 60px; /* Adjust for header height */
+    background: url('pictures/Brain.webp') no-repeat center center; /* Syncing hero-section background */
+    background-size: cover; /* Cover the entire hero section */
 }
 
 .hero-content {
@@ -98,7 +115,7 @@ body {
 .feature-section {
     background: #fff;
     color: #000;
-    padding: 40px 5%;
+    padding: 20px 5%;
 }
 
 .feature-container {
@@ -109,12 +126,12 @@ body {
 }
 
 .feature {
-    background: rgba(34, 15, 97, 0.9);
+    background: rgba(34, 15, 97, 0.1);
     border-radius: 10px;
     padding: 15px;
     text-align: center;
     flex: 1 1 calc(25% - 10px);
-    color: #fff;
+    color: #000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }

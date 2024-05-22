@@ -9,6 +9,7 @@
 </head>
 <body>
     <main class="main">
+        <!-- Header Section -->
         <header class="header">
             <a href="#" class="logo">Epilepsy.</a>
             <nav class="navbar">
@@ -19,6 +20,7 @@
             </nav>
         </header>
 
+        <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-content">
                 <h1>Epilepsy</h1>
@@ -27,6 +29,7 @@
             </div>
         </section>
 
+        <!-- Feature Section -->
         <section class="feature-section">
             <div class="feature-container">
                 <div class="feature">
@@ -52,5 +55,23 @@
             </div>
         </section>
     </main>
+
+    <!-- JavaScript Section -->
+    <script>
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                header.style.top = '-80px'; // Adjust the value as needed based on your header height
+            } else {
+                // Scrolling up
+                header.style.top = '0';
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
 </body>
 </html>
