@@ -102,7 +102,7 @@ Les résultats des différentes expérimentations seront sauvegardés dans le r�
 
 ## Licence
 
-Ce projet est sous licence MIT - voir le fichier LICENSE pour plus de détails.
+Ce projet est sous licence MIT - voir le fichier [LICENSE](https://github.com/charlesbchv/ia-for-medecine?tab=EPL-2.0-1-ov-file)  pour plus de détails.
 
 
 ### Explications des sections du README :
