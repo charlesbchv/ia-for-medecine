@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epilepsy Information</title>
+    <link rel="stylesheet" href="epilespsy.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Epilepsy.</a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="info-section">
+            <h1>Epilepsy Information</h1>
+            <div class="definition">
+                <h2>What is Epilepsy?</h2>
+                <p>Epilepsy is a neurological disorder marked by sudden recurrent episodes of sensory disturbance, loss of consciousness, or convulsions, associated with abnormal electrical activity in the brain.</p>
+            </div>
+            <div class="info-container">
+                <div class="info-box">
+                    <h2>Symptoms</h2>
+                    <p>Common symptoms include temporary confusion, staring spells, uncontrollable jerking movements of the arms and legs, loss of consciousness or awareness, and psychic symptoms such as fear or anxiety.</p>
+                </div>
+                <div class="info-box">
+                    <h2>Causes</h2>
+                    <p>Epilepsy can be caused by various factors including genetic influence, head trauma, brain conditions, infectious diseases, prenatal injury, and developmental disorders.</p>
+                </div>
+                <div class="info-box">
+                    <h2>Effects</h2>
+                    <p>The effects of epilepsy can vary greatly from person to person and may include physical injury during seizures, emotional challenges, cognitive impacts, and social implications.</p>
+                </div>
+                <div class="info-box">
+                    <h2>Treatments</h2>
+                    <p>Treatments for epilepsy include medication, lifestyle changes, and sometimes surgery or other therapies to reduce or eliminate seizures.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                header.style.top = '-80px'; // Adjust the value as needed based on your header height
+            } else {
+                // Scrolling up
+                header.style.top = '0';
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>
