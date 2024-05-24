@@ -1,3 +1,4 @@
+/* Existing CSS content */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -9,36 +10,35 @@
 
 body {
     color: #000;
-    background: url('pictures/Brain.webp') no-repeat center center fixed; /* Background image covering the entire page */
-    background-size: cover;
+    background-color: #f8f9fa; 
     overflow-x: hidden;
 }
 
 .header {
-    position: fixed; /* Changed from relative to fixed for scroll effect */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 10px 5%;
-    background: transparent; /* Changed background to transparent */
+    background: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 100;
-    transition: top 0.3s; /* Transition effect for hiding and showing */
+    transition: top 0.3s;
 }
 
 .logo {
     font-size: 32px;
-    color: #fff; /* Ensure text is readable over the background image */
+    color: #000;
     text-decoration: none;
     font-weight: 700;
 }
 
 .navbar a {
     font-size: 18px;
-    color: #fff; /* Ensure text is readable over the background image */
+    color: #000;
     text-decoration: none;
     font-weight: 500;
     margin-left: 20px;
@@ -53,7 +53,7 @@ body {
     bottom: -5px;
     width: 0;
     height: 2px;
-    background: #fff;
+    background: #000;
     transition: width 0.3s;
 }
 
@@ -76,12 +76,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: #000;
     text-align: center;
     padding: 100px 5%;
-    margin-top: 60px; /* Adjust for header height */
-    background: url('pictures/Brain.webp') no-repeat center center; /* Syncing hero-section background */
-    background-size: cover; /* Cover the entire hero section */
+    margin-top: 60px;
+    background-color: #e9ecef;
 }
 
 .hero-content {
@@ -153,4 +152,102 @@ body {
 .feature:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.background-section {
+    padding: 60px 5%;
+    background-color: #e9ecef;
+    color: #000;
+    text-align: left;
+}
+
+.background-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.background-section p, .background-section ul {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.background-section ul {
+    list-style-type: disc;
+    margin-left: 40px;
+}
+
+.extraction-section {
+    position: relative;
+    padding: 60px 5%;
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.extraction-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./pictures/Background - extraction.webp') no-repeat center center/cover;
+    filter: blur(8px); /* Adjust the blur value as needed */
+    z-index: -1;
+}
+
+.extraction-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.extraction-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.extraction-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.extraction-content h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.extraction-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    color: #000000;
+}
+
+.result-box {
+    flex: 1 1 calc(50% - 40px);
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.result-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.result-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.result-box p {
+    font-size: 16px;
+    margin-top: 10px;
 }
