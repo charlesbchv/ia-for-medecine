@@ -15,8 +15,7 @@
             <nav class="navbar">
                 <a href="#">Home</a>
                 <a href="#extraction">Extraction</a>
-                <a href="#">Classification</a>
-                <a href="#">Contact</a>
+                <a href="#recognition">Classification</a> <!-- Updated link -->
             </nav>
         </header>
 
@@ -73,24 +72,33 @@
                 </div>
             </div>
         </section>
+
+        <!-- Recognition Section -->
+        <section id="recognition" class="recognition-section">
+            <div class="recognition-content">
+                <h2>Recognition of Epilepsy</h2>
+                <input type="file" id="fileInput" />
+                <button class="upload-button" onclick="loadFile()">load Data</button>
+                <div id="uploadedResults">
+                    <h3>Uploaded File Results</h3>
+                    <div id="resultsDisplay">
+                        <div class="currency-result">70</div>
+                        <div class="percentage-result">
+                            <div class="circle">
+                                <div class="mask full">
+                                    <div class="fill"></div>
+                                </div>
+                                <div class="mask half">
+                                    <div class="fill"></div>
+                                </div>
+                                <div class="inside-circle">80%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-
-    <!-- JavaScript Section -->
-    <script>
-        let lastScrollTop = 0;
-        const header = document.querySelector('.header');
-
-        window.addEventListener('scroll', function() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > lastScrollTop) {
-                // Scrolling down
-                header.style.top = '-80px'; // Adjust the value as needed based on your header height
-            } else {
-                // Scrolling up
-                header.style.top = '0';
-            }
-            lastScrollTop = scrollTop;
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

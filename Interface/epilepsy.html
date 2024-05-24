@@ -12,8 +12,7 @@
         <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="index.html#extraction">Extraction</a>
-            <a href="#">Classification</a>
-            <a href="#">Contact</a>
+            <a href="index.html#recognition">Classification</a> 
         </nav>
     </header>
     <main class="main">
@@ -44,21 +43,7 @@
         </section>
     </main>
 
-    <script>
-        let lastScrollTop = 0;
-        const header = document.querySelector('.header');
-
-        window.addEventListener('scroll', function() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > lastScrollTop) {
-                // Scrolling down
-                header.style.top = '-80px'; // Adjust the value as needed based on your header height
-            } else {
-                // Scrolling up
-                header.style.top = '0';
-            }
-            lastScrollTop = scrollTop;
-        });
-    </script>
+    <!-- JavaScript Section -->
+    <script src="script.js"></script>
 </body>
 </html>
