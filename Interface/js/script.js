@@ -10,10 +10,13 @@ function loadFile() {
     }
 
     const file = fileInput.files[0];
-    const reader = new FileReader();
+    // sendFile(file)
 
+    const reader = new FileReader();
+    
     reader.onload = function(e) {
         const content = e.target.result;
+
         // Process the file content and display the results (dummy data used for demonstration)
         const currencyValue = "70";
         const percentageValue = 70;
@@ -34,7 +37,28 @@ function loadFile() {
     };
 
     reader.readAsText(file);
+
+
 }
+
+
+// function sendFile(content) {
+//     const formData = new FormData()
+
+//     formData.append('file', content)
+
+//     fetch("http://127.0.0.1:5000/files", {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: formData
+//     })
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log(data)
+//         })
+// }
 
 document.addEventListener('DOMContentLoaded', function() {
     NavScroll();

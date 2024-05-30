@@ -78,7 +78,7 @@ body {
     align-items: center;
     color: #000;
     text-align: center;
-    padding: 100px 5%;
+    padding: 80px 5%;
     margin-top: 60px;
     background-color: #e9ecef;
 }
@@ -94,7 +94,6 @@ body {
 
 .hero-content p {
     font-size: 24px;
-    margin-bottom: 40px;
 }
 
 .hero-button {
@@ -129,6 +128,7 @@ body {
     border-radius: 10px;
     padding: 15px;
     text-align: center;
+    text-decoration: none;
     flex: 1 1 calc(25% - 10px);
     color: #000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -191,7 +191,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('./pictures/Background - extraction.webp') no-repeat center center/cover;
+    background: url('../pictures/Background - extraction.webp') no-repeat center center/cover;
     filter: blur(8px); /* Adjust the blur value as needed */
     z-index: -1;
 }
