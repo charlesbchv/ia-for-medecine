@@ -14,9 +14,8 @@
             <a href="#" class="logo">Epilepsy.</a>
             <nav class="navbar">
                 <a href="#">Home</a>
-                <a href="#extraction">Feature Extraction</a>
-                <a href="#selection">Ensemble Selection<a>
-                <a href="#recognition">Detection</a> <!-- Updated link -->
+                <a href="#extraction">Extraction</a>
+                <a href="#recognition">Classification</a>
             </nav>
         </header>
 
@@ -68,47 +67,40 @@
             </div>
         </section>
 
-        <!-- Ensemble Selection Section -->
-        <section id="selection" class="selection-section">
-            <div class="selection-content">
-                <h2>Ensemble selection</h2>
-                
-            </div>
-        </section>
-
         <!-- Recognition Section -->
         <section id="recognition" class="recognition-section">
             <div class="recognition-content">
                 <h2>Recognition of Epilepsy</h2>
-                <div id="recognition-explanation">
-                    <p>Select a file (?) to detect if the condition is:</p>
-                    <ul>
-                        <li>Inter-ictal (between seizures)</li>
-                        <li>Pre-ictal (30 minutes before the seizure)</li>
-                        <li>Ictal (during the seizure)</li>
-                    </ul>
-                </div>
-                <input type="file" id="fileInput" />
-                <button class="upload-button" onclick="loadFile()">Load Data</button>
+                <span class="file-upload">
+                    <label for="fileInput" class="custom-button">
+                        Insérer vos données&nbsp;&nbsp;&nbsp;      
+                        <img src="https://img.icons8.com/?size=100&id=77787&format=png&color=000000" class="icon" alt="icon" />
+                    </label>
+                    <input type="file" id="fileInput" multiple />
+                    <button class="upload-button" onclick="loadFiles()">Load Data</button>
+                </span>
+                <div class="error-message" id="errorMessage"></div>
                 <div id="uploadedResults">
                     <h3>Uploaded File Results</h3>
                     <div id="resultsDisplay">
                         <div class="currency-result">70</div>
                         <div class="percentage-result">
                             <div class="circle">
-                                <div class="mask full">
-                                    <div class="fill"></div>
-                                </div>
-                                <div class="mask half">
-                                    <div class="fill"></div>
-                                </div>
                                 <div class="inside-circle">80%</div>
                             </div>
                         </div>
                     </div>
+                    <div class="file-list" id="fileList"></div>
                 </div>
             </div>
         </section>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <a href="https://www.esiee.fr" class="custom-button">ESIEE PARIS</a>
+            <br><br>
+            <p>Copyright © 2024 | All Rights Reserved.</p>
+        </footer>
     </main>
     <script src="../js/script.js"></script>
 </body>

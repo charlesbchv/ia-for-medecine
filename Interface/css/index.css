@@ -1,4 +1,4 @@
-/* Existing CSS content */
+/* Global Styles */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -8,12 +8,24 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     color: #000;
     background-color: #f8f9fa; 
-    overflow-x: hidden;
 }
 
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
 .header {
     position: fixed;
     top: 0;
@@ -65,13 +77,7 @@ body {
     color: #ffcc00;
 }
 
-.main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
-}
-
+/* Hero Section Styles */
 .hero-section {
     display: flex;
     justify-content: center;
@@ -110,6 +116,7 @@ body {
     background: #331b85;
 }
 
+/* Feature Section Styles */
 .feature-section {
     background: #fff;
     color: #000;
@@ -154,6 +161,7 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Background Section Styles */
 .background-section {
     padding: 60px 5%;
     background-color: #e9ecef;
@@ -166,22 +174,18 @@ body {
     margin-bottom: 20px;
 }
 
-ul {
-    list-style-type: disc;
-    margin-left: 40px;
-}
-
 .background-section p, .background-section ul {
     font-size: 20px;
     margin-bottom: 20px;
 }
 
-h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
+.background-section ul {
+    list-style-type: disc;
+    margin-left: 40px;
 }
 
-section {
+/* Extraction Section Styles */
+.extraction-section {
     position: relative;
     padding: 60px 5%;
     color: #ffffff;
@@ -208,6 +212,10 @@ section {
     z-index: 1;
 }
 
+.extraction-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
 
 .extraction-content p {
     font-size: 18px;
@@ -253,7 +261,7 @@ section {
     margin-top: 10px;
 }
 
-/* New CSS for Recognition Section */
+/* Recognition Section Styles */
 .recognition-section {
     padding: 60px 5%;
     background-color: #ffffff; /* White background */
@@ -271,18 +279,7 @@ section {
     margin-bottom: 20px;
 }
 
-#recognition-explanation {
-    width: fit-content;
-    margin: auto;
-    text-align: left;
-}
-
-#recognition-explanation ul {
-    padding-left: 65px;
-}
-
 #uploadedResults {
-    display: none;
     margin-top: 20px;
     background: #f8f9fa; /* Light background for results */
     padding: 20px;
@@ -305,56 +302,59 @@ section {
     color: green;
 }
 
-.currency-result .error {
-    color: red;
-}
-
 .percentage-result {
     font-weight: bold;
     color: blue;
 }
 
-/* New CSS for buttons */
-.upload-button {
-    font-size: 14px;
-    color: #fff;
-    background: #007bff;
-    padding: 10px 20px;
+/* Button Styles */
+.custom-button, .upload-button {
+    font-size: 18px;
+    color: #000;
+    background: #f8f9fa;
+    padding: 15px 30px;
     text-decoration: none;
-    border: none;
-    border-radius: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: background 0.3s;
     cursor: pointer;
-    margin-top: 20px;
+    min-width: 200px; /* Ensures buttons are the same size */
+    height: 50px; /* Ensures buttons have the same height */
+    vertical-align: middle; /* Aligns buttons vertically */
+}
+
+.custom-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.upload-button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    margin-left: 10px; /* Space between the buttons */
 }
 
 .upload-button:hover {
     background: #0056b3;
 }
 
-.upload-button:disabled {
-    background: #6c7177;
-    cursor: default;
+.custom-button:hover {
+    background: #e0e0e0;
 }
 
-/* New CSS for currency result and circular progress bar */
+/* Currency Result and Circular Progress Bar Styles */
 #resultsDisplay .currency-result {
     font-weight: bold;
+    color: green;
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-#resultsDisplay .currency-result.yellow {
-    color: #ffcc00;
-}
-
-#resultsDisplay .currency-result.orange {
-    color: orange;
-}
-
-#resultsDisplay .currency-result.red {
-    color: red;
-}
 .percentage-result {
     position: relative;
     width: 100px;
@@ -385,4 +385,70 @@ section {
     font-size: 20px;
     font-weight: bold;
     color: #000;
+}
+
+/* File Input and Label Styles */
+.file-upload {
+    display: flex;
+    justify-content: center; /* Center the file upload section */
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.file-upload label {
+    display: flex;
+    align-items: center;
+}
+
+.file-upload input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.file-list {
+    margin-top: 10px;
+}
+
+.file-list-item {
+    margin-bottom: 5px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e9ecef; /* Adjust this color as needed */
+    color: #2e2d2d;
+    width: 100%;
+    flex-shrink: 0; /* Ensure the footer does not shrink */
+}
+
+.footer .custom-button {
+    display: inline-block;
+    background-color: #333; /* Adjust this color as needed */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 20px;
+    border: 1px solid rgb(90, 87, 87);
+}
+
+.footer .custom-button:hover {
+    background-color: #555; /* Adjust this color as needed */
 }

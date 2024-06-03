@@ -1,89 +1,76 @@
 // JavaScript for file upload and result display
+const forbiddenExtensions = ['.py', '.ipynb', '.java', '.c'];
 
-function loadFile() {
+function loadFiles() {
     const fileInput = document.getElementById('fileInput');
-    const uploadButton = document.querySelector('.upload-button')
-    const uploadedResults = document.getElementById('uploadedResults');
+    const errorMessage = document.getElementById('errorMessage');
+    const fileList = document.getElementById('fileList');
     const resultsDisplay = document.getElementById('resultsDisplay');
+
+    errorMessage.innerHTML = '';
+    fileList.innerHTML = '';
 
     if (fileInput.files.length === 0) {
         alert('Please select a file to upload.');
         return;
     }
 
-    uploadButton.setAttribute('disabled', true)
+    Array.from(fileInput.files).forEach(file => {
+        const extension = `.${file.name.split('.').pop()}`;
+        if (forbiddenExtensions.includes(extension)) {
+            errorMessage.innerHTML = `Files of type ${extension} are forbidden.`;
+            return;
+        }
 
-    const file = fileInput.files[0];
+        // Process and display the file name
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const fileName = file.name;
 
-    // Get prediction
-    const formData = new FormData();
+            const listItem = document.createElement('div');
+            listItem.className = 'file-list-item';
+            listItem.textContent = `File "${fileName}" has been uploaded.`;
+            fileList.appendChild(listItem);
+        };
+        reader.readAsText(file);
+    });
 
-    formData.append('file', file);
+    // Process the file content and display the results (dummy data used for demonstration)
+    const currencyValue = "70";
+    const percentageValue = 70;
 
-    fetch("http://127.0.0.1:5000/files", {
-        method: 'POST',
-        body: formData
-    }).then(
-        response => response.json()
-    ).then(data => {
-        console.log(data);
-        
-        resultsDisplay.innerHTML = GetState(data.results)
-        
-        // const percentageValue = 100;
-        // <div class="percentage-result">
-        //     <div class="circle">
-        //         <div class="inside-circle">${percentageValue}%</div>
-        //     </div>
-        // </div>
-
-        // Update the circular progress bar
-        // const circle = document.querySelector('.circle');
-        // const fill = (percentageValue / 100) * 360;
-        // circle.style.background = `conic-gradient(#4caf50 0% ${fill}%, #ddd ${fill}% 100%)`;
-
-    }).catch(e => {
-
-        console.log("error")
-        resultsDisplay.innerHTML = `
-            <div class="currency-result">
-                <p class="error">An error has occured. Please try again.</p>
+    resultsDisplay.innerHTML = `
+        <div class="currency-result">${currencyValue}</div>
+        <div class="percentage-result">
+            <div class="circle">
+                <div class="inside-circle">${percentageValue}%</div>
             </div>
-        `;
+        </div>
+    `;
 
-    }).finally(() => {
-
-        uploadedResults.style.display = "block";
-        uploadButton.removeAttribute('disabled');
-    })
+    // Update the circular progress bar
+    const circle = document.querySelector('.circle');
+    const fill = (percentageValue / 100) * 360;
+    circle.style.background = `conic-gradient(#4caf50 0% ${fill}%, #ddd ${fill}% 100%)`;
 }
 
+// function sendFile(content) {
+//     const formData = new FormData()
 
-function GetState(value) {
-    let state, type;
+//     formData.append('file', content)
 
-
-    switch (value) {
-        case(0) : {
-            state = "Inter-ictal";
-            type = "yellow"
-            break;
-        }
-        case(1): {
-            state = "Pre-ictal";
-            type = "orange"
-            break;
-        }
-        case(2): {
-            state = "ictal";
-            type = "red"
-            break;
-        }
-    }
-
-    return `<div class="currency-result ${type}">${state}</div>`
-}
-
+//     fetch("http://127.0.0.1:5000/files", {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: formData
+//     })
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log(data)
+//         })
+// }
 
 document.addEventListener('DOMContentLoaded', function() {
     NavScroll();
