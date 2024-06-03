@@ -166,17 +166,22 @@ body {
     margin-bottom: 20px;
 }
 
+ul {
+    list-style-type: disc;
+    margin-left: 40px;
+}
+
 .background-section p, .background-section ul {
     font-size: 20px;
     margin-bottom: 20px;
 }
 
-.background-section ul {
-    list-style-type: disc;
-    margin-left: 40px;
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
-.extraction-section {
+section {
     position: relative;
     padding: 60px 5%;
     color: #ffffff;
@@ -203,10 +208,6 @@ body {
     z-index: 1;
 }
 
-.extraction-content h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
 
 .extraction-content p {
     font-size: 18px;
