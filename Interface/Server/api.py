@@ -41,5 +41,5 @@ def post_file():
     return jsonify({
         "message": "File uploaded successfully",
         "filename": file.filename,
-        "results": pred.tolist()
+        "results": pred[0]
     }), 201

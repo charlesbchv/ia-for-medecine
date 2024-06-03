@@ -71,8 +71,16 @@
         <section id="recognition" class="recognition-section">
             <div class="recognition-content">
                 <h2>Recognition of Epilepsy</h2>
+                <div id="recognition-explanation">
+                    <p>Select a file (?) to detect if the condition is:</p>
+                    <ul>
+                        <li>Inter-ictal (between seizures)</li>
+                        <li>Pre-ictal (30 minutes before the seizure)</li>
+                        <li>Ictal (during the seizure)</li>
+                    </ul>
+                </div>
                 <input type="file" id="fileInput" />
-                <button class="upload-button" onclick="loadFile()">load Data</button>
+                <button class="upload-button" onclick="loadFile()">Load Data</button>
                 <div id="uploadedResults">
                     <h3>Uploaded File Results</h3>
                     <div id="resultsDisplay">

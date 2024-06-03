@@ -270,7 +270,18 @@ body {
     margin-bottom: 20px;
 }
 
+#recognition-explanation {
+    width: fit-content;
+    margin: auto;
+    text-align: left;
+}
+
+#recognition-explanation ul {
+    padding-left: 65px;
+}
+
 #uploadedResults {
+    display: none;
     margin-top: 20px;
     background: #f8f9fa; /* Light background for results */
     padding: 20px;
@@ -293,6 +304,10 @@ body {
     color: green;
 }
 
+.currency-result .error {
+    color: red;
+}
+
 .percentage-result {
     font-weight: bold;
     color: blue;
@@ -300,13 +315,13 @@ body {
 
 /* New CSS for buttons */
 .upload-button {
-    font-size: 18px;
+    font-size: 14px;
     color: #fff;
     background: #007bff;
-    padding: 15px 30px;
+    padding: 10px 20px;
     text-decoration: none;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: background 0.3s;
     cursor: pointer;
     margin-top: 20px;
@@ -316,14 +331,29 @@ body {
     background: #0056b3;
 }
 
+.upload-button:disabled {
+    background: #6c7177;
+    cursor: default;
+}
+
 /* New CSS for currency result and circular progress bar */
 #resultsDisplay .currency-result {
     font-weight: bold;
-    color: green;
     font-size: 24px;
     margin-bottom: 20px;
 }
 
+#resultsDisplay .currency-result.yellow {
+    color: #ffcc00;
+}
+
+#resultsDisplay .currency-result.orange {
+    color: orange;
+}
+
+#resultsDisplay .currency-result.red {
+    color: red;
+}
 .percentage-result {
     position: relative;
     width: 100px;
