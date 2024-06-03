@@ -10,7 +10,8 @@ function loadFile() {
     }
 
     const file = fileInput.files[0];
-    // sendFile(file)
+
+    sendFile(file)
 
     const reader = new FileReader();
     
@@ -42,23 +43,20 @@ function loadFile() {
 }
 
 
-// function sendFile(content) {
-//     const formData = new FormData()
+function sendFile(content) {
+    const formData = new FormData()
+    console.log("content", content)
+    formData.append('file', content)
 
-//     formData.append('file', content)
-
-//     fetch("http://127.0.0.1:5000/files", {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: formData
-//     })
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log(data)
-//         })
-// }
+    fetch("http://127.0.0.1:5000/files", {
+        method: 'POST',
+        body: formData
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+        })
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     NavScroll();
