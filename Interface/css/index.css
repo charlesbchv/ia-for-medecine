@@ -25,6 +25,17 @@ main {
     flex-direction: column;
 }
 
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 40px;
+}
+
+
 /* Header Styles */
 .header {
     position: fixed;
@@ -169,23 +180,16 @@ main {
     text-align: left;
 }
 
-.background-section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
 
 .background-section p, .background-section ul {
     font-size: 20px;
     margin-bottom: 20px;
 }
 
-.background-section ul {
-    list-style-type: disc;
-    margin-left: 40px;
-}
+
 
 /* Extraction Section Styles */
-.extraction-section {
+.extraction-section, .selection-section {
     position: relative;
     padding: 60px 5%;
     color: #ffffff;
@@ -279,7 +283,18 @@ main {
     margin-bottom: 20px;
 }
 
+#recognition-explanation {
+    width: fit-content;
+    margin: auto;
+    text-align: left;
+}
+
+#recognition-explanation ul {
+    padding-left: 65px;
+}
+
 #uploadedResults {
+    display: none;
     margin-top: 20px;
     background: #f8f9fa; /* Light background for results */
     padding: 20px;
@@ -297,9 +312,14 @@ main {
     margin: 10px 0;
 }
 
-.currency-result {
+.prediction-result {
     font-weight: bold;
     color: green;
+}
+
+
+.prediction-result .error {
+    color: red;
 }
 
 .percentage-result {
@@ -347,12 +367,29 @@ main {
     background: #e0e0e0;
 }
 
-/* Currency Result and Circular Progress Bar Styles */
-#resultsDisplay .currency-result {
+.upload-button:disabled {
+    background: #6c7177;
+    cursor: default;
+}
+
+/* prediction Result and Circular Progress Bar Styles */
+#resultsDisplay .prediction-result {
     font-weight: bold;
     color: green;
     font-size: 24px;
     margin-bottom: 20px;
+}
+
+#resultsDisplay .prediction-result.yellow {
+    color: #ffcc00;
+}
+
+#resultsDisplay .prediction-result.orange {
+    color: orange;
+}
+
+#resultsDisplay .prediction-result.red {
+    color: red;
 }
 
 .percentage-result {
@@ -392,6 +429,7 @@ main {
     display: flex;
     justify-content: center; /* Center the file upload section */
     align-items: center;
+    margin-top: 20px;
     margin-bottom: 20px;
     width: 100%;
 }

@@ -1,11 +1,14 @@
 // JavaScript for file upload and result display
 const forbiddenExtensions = ['.py', '.ipynb', '.java', '.c'];
+const fileInput = document.getElementById('fileInput');
+const fileList = document.getElementById('fileList');
+const errorMessage = document.getElementById('errorMessage');
 
 function loadFiles() {
-    const fileInput = document.getElementById('fileInput');
-    const errorMessage = document.getElementById('errorMessage');
-    const fileList = document.getElementById('fileList');
     const resultsDisplay = document.getElementById('resultsDisplay');
+
+    const uploadButton = document.querySelector('.upload-button')
+    const uploadedResults = document.getElementById('uploadedResults');
 
     errorMessage.innerHTML = '';
     fileList.innerHTML = '';
@@ -15,65 +18,80 @@ function loadFiles() {
         return;
     }
 
-    Array.from(fileInput.files).forEach(file => {
-        const extension = `.${file.name.split('.').pop()}`;
-        if (forbiddenExtensions.includes(extension)) {
-            errorMessage.innerHTML = `Files of type ${extension} are forbidden.`;
-            return;
-        }
+    const file = fileInput.files[0];
 
-        // Process and display the file name
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const fileName = file.name;
+    const extension = `.${file.name.split('.').pop()}`;
+    if (forbiddenExtensions.includes(extension)) {
+        console.log('error')
+        errorMessage.innerHTML = `Files of type ${extension} are forbidden.`;
+        return;
+    }
 
-            const listItem = document.createElement('div');
-            listItem.className = 'file-list-item';
-            listItem.textContent = `File "${fileName}" has been uploaded.`;
-            fileList.appendChild(listItem);
-        };
-        reader.readAsText(file);
-    });
+    uploadButton.setAttribute('disabled', true)
 
-    // Process the file content and display the results (dummy data used for demonstration)
-    const currencyValue = "70";
-    const percentageValue = 70;
+    // Get prediction
+    const formData = new FormData();
+    formData.append('file', file);
 
-    resultsDisplay.innerHTML = `
-        <div class="currency-result">${currencyValue}</div>
-        <div class="percentage-result">
-            <div class="circle">
-                <div class="inside-circle">${percentageValue}%</div>
+    fetch("http://127.0.0.1:5000/files", {
+        method: 'POST',
+        body: formData
+    }).then(
+        response => response.json()
+    ).then(data => {
+        console.log(data);
+
+        resultsDisplay.innerHTML = GetState(data.results)
+
+    }).catch(e => {
+    
+        console.log(e)
+        resultsDisplay.innerHTML = `
+            <div class="prediction-result">
+                <p class="error">An error has occured. Please try again.</p>
             </div>
-        </div>
-    `;
+        `
+    }).finally(() => {
 
-    // Update the circular progress bar
-    const circle = document.querySelector('.circle');
-    const fill = (percentageValue / 100) * 360;
-    circle.style.background = `conic-gradient(#4caf50 0% ${fill}%, #ddd ${fill}% 100%)`;
+        uploadedResults.style.display = "block";
+        uploadButton.removeAttribute('disabled');
+
+    })
 }
 
-// function sendFile(content) {
-//     const formData = new FormData()
+function GetState(value) {
+    let state, type;
 
-//     formData.append('file', content)
 
-//     fetch("http://127.0.0.1:5000/files", {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: formData
-//     })
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log(data)
-//         })
-// }
+    switch (value) {
+        case(0) : {
+            state = "Inter-ictal";
+            type = "yellow"
+            break;
+        }
+        case(1): {
+            state = "Pre-ictal";
+            type = "orange"
+            break;
+        }
+        case(2): {
+            state = "ictal";
+            type = "red"
+            break;
+        }
+    }
+
+    return `<div class="prediction-result ${type}">${state}</div>`
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     NavScroll();
+
+    fileInput.addEventListener('change', e => {
+        const file = e.target.files[0]
+        fileList.innerHTML = `<p class="file-list-item">File "${file.name}" has been uploaded.</p>`;
+        errorMessage.innerHTML = '';
+    })
 });
 
 function NavScroll() {

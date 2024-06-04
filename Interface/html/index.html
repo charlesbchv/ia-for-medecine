@@ -14,8 +14,9 @@
             <a href="#" class="logo">Epilepsy.</a>
             <nav class="navbar">
                 <a href="#">Home</a>
-                <a href="#extraction">Extraction</a>
-                <a href="#recognition">Classification</a>
+                <a href="index.html#extraction">Feature Extraction</a>
+                <a href="index.html#selection">Ensemble Selection<a>
+                <a href="index.html#recognition">Detection</a>
             </nav>
         </header>
 
@@ -51,7 +52,7 @@
         <!-- Extraction Section -->
         <section id="extraction" class="extraction-section">
             <div class="extraction-content">
-                <h2>Extraction</h2>
+                <h2>Feature Extraction</h2>
                 <p>Explore the methods and techniques used in the extraction of meaningful data in epilepsy research. This study focuses on using Principal Component Analysis (PCA) to reduce the dimensionality of the dataset, making it easier to visualize and interpret the underlying patterns. PCA helps in identifying the principal components that capture the most variance in the data, facilitating the separation of different classes.</p>
                 <h3>Some results of Principal Component Analysis (PCA) to reduce dimensionality:</h3>
                 <div class="extraction-results">
@@ -67,18 +68,38 @@
             </div>
         </section>
 
+        <!-- Ensemble Selection Section -->
+        <section id="selection" class="selection-section">
+            <div class="selection-content">
+                <h2>Ensemble selection</h2>
+
+            </div>
+        </section>
+
         <!-- Recognition Section -->
         <section id="recognition" class="recognition-section">
             <div class="recognition-content">
                 <h2>Recognition of Epilepsy</h2>
+                <div id="recognition-explanation">
+                    <p>Select a file (?) to detect if the condition is:</p>
+                    <ul>
+                        <li>Inter-ictal (between seizures)</li>
+                        <li>Pre-ictal (30 minutes before the seizure)</li>
+                        <li>Ictal (during the seizure)</li>
+                    </ul>
+                </div>
+                
                 <span class="file-upload">
                     <label for="fileInput" class="custom-button">
                         Insérer vos données&nbsp;&nbsp;&nbsp;      
                         <img src="https://img.icons8.com/?size=100&id=77787&format=png&color=000000" class="icon" alt="icon" />
                     </label>
-                    <input type="file" id="fileInput" multiple />
+                    <input type="file" id="fileInput" />
                     <button class="upload-button" onclick="loadFiles()">Load Data</button>
                 </span>
+
+                <div class="file-list" id="fileList"></div>
+
                 <div class="error-message" id="errorMessage"></div>
                 <div id="uploadedResults">
                     <h3>Uploaded File Results</h3>
@@ -90,7 +111,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="file-list" id="fileList"></div>
                 </div>
             </div>
         </section>
