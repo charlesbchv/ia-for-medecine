@@ -1,108 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Epilepsy Website</title>
+    <title>Site sur l'épilepsie</title>
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
     <main class="main">
-        <!-- Header Section -->
+        <!-- Section en-tête -->
         <header class="header">
-            <a href="#" class="logo">Epilepsy.</a>
+            <a href="#" class="logo">Épilepsie.</a>
             <nav class="navbar">
-                <a href="#">Home</a>
-                <a href="index.html#extraction">Feature Extraction</a>
-                <a href="index.html#selection">Ensemble Selection<a>
-                <a href="index.html#recognition">Detection</a>
+                <a href="#">Accueil</a>
+                <a href="index.html#donnees">Données</a>
+                <a href="index.html#extraction-selection">Extraction & Sélection</a>
+                <a href="index.html#recognition">Détection</a>
             </nav>
         </header>
 
-        <!-- Hero Section -->
+        <!-- Section Hero -->
         <section class="hero-section">
             <div class="hero-content">
-                <h1>Epilepsy</h1>
-                <p>Your journey to understanding epilepsy starts here.</p>
+                <h1>Épilepsie</h1>
+                <p>Votre parcours pour comprendre l'épilepsie commence ici.</p>
             </div>
         </section>
 
-        <!-- Feature Section -->
+        <!-- Section Fonctionnalités -->
         <section class="feature-section">
             <div class="feature-container">
                 <a href="epilepsy.html" class="feature">
-                    <img src="../pictures/What is epilespsy.webp" alt="What is Epilepsy?">
-                    <h2>What is Epilepsy?</h2>
-                    <p>Understanding the unique patterns in brain activity to better diagnose and treat epilepsy.</p>
+                    <img src="../pictures/What is epilespsy.webp" alt="Qu'est-ce que l'épilepsie ?">
+                    <h2>Qu'est-ce que l'épilepsie ?</h2>
+                    <p>Comprendre les motifs uniques de l'activité cérébrale pour mieux diagnostiquer et traiter l'épilepsie.</p>
                 </a>
                 <a href="symptoms.html" class="feature">
-                    <img src="../pictures/Symptoms and Treatment.webp" alt="Symptoms and Treatment">
-                    <h2>Symptoms and Treatments</h2>
-                    <p>Learn about the symptoms of epilepsy and the latest treatments available to manage this condition.</p>
+                    <img src="../pictures/Symptoms and Treatment.webp" alt="Symptômes et traitements">
+                    <h2>Symptômes et traitements</h2>
+                    <p>Découvrez les symptômes de l'épilepsie et les derniers traitements disponibles pour gérer cette condition.</p>
                 </a>
                 <div class="feature">
-                    <img src="../pictures/Get Involved.webp" alt="Get Involved">
-                    <h2>Get Involved</h2>
-                    <p>Join the fight against epilepsy by getting involved in research, advocacy, and support activities.</p>
+                    <img src="../pictures/Get Involved.webp" alt="S'impliquer">
+                    <h2>S'impliquer</h2>
+                    <p>Rejoignez la lutte contre l'épilepsie en vous impliquant dans la recherche, la défense et les activités de soutien.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Extraction Section -->
-        <section id="extraction" class="extraction-section">
-            <div class="extraction-content">
-                <h2>Feature Extraction</h2>
-                <p>Explore the methods and techniques used in the extraction of meaningful data in epilepsy research. This study focuses on using Principal Component Analysis (PCA) to reduce the dimensionality of the dataset, making it easier to visualize and interpret the underlying patterns. PCA helps in identifying the principal components that capture the most variance in the data, facilitating the separation of different classes.</p>
-                <h3>Some results of Principal Component Analysis (PCA) to reduce dimensionality:</h3>
-                <div class="extraction-results">
-                    <div class="result-box">
-                        <img src="../pictures/Graphe-two class.png" alt="Class Separation">
-                        <p>Class separation using the first two principal components.</p>
-                    </div>
-                    <div class="result-box">
-                        <img src="../pictures/graphe - 1.png" alt="Explained Variance Ratio">
-                        <p>Explained variance ratio of the fitted principal component vector.</p>
-                    </div>
-                </div>
+        <!-- Section Données -->
+        <section id="donnees" class="data-section">
+            <h2>Données</h2>
+            <div class="data-content">
+                <p>
+                    Les signaux EEG utilisés dans ce travail sont dérivés de la base de données "CHB-MIT" disponible en libre accès sur "PhysioNet.org". Cette base de données contient 24 ensembles d'enregistrements EEG continus à long terme, multicanaux, acquis auprès de 22 patients, enregistrés à l'Hôpital pour enfants de Boston. Ces enregistrements ont été réalisés sur des patients pédiatriques souffrant de crises épileptiques (5 hommes, âgés de 3 à 22 ans ; 17 femmes, âgées de 1,5 à 19 ans ; et 1 sujet sans information sur l'âge et le sexe) pour évaluer leur aptitude.
+                </p>
+                <p>
+                    <strong>CHB-MIT Scalp EEG Database v1.0.0</strong><br>
+                    Enregistrements EEG de sujets pédiatriques atteints de crises incontrôlables, collectés à l'Hôpital pour enfants de Boston.
+                </p>
+                <p>Source: <a class="data-link" href="https://physionet.org/content/chbmit/1.0.0/" target="_blank">https://physionet.org/content/chbmit/1.0.0/</a></p>
             </div>
         </section>
 
-        <!-- Ensemble Selection Section -->
-        <section id="selection" class="selection-section">
-            <div class="selection-content">
-                <h2>Ensemble selection</h2>
-
+        <!-- Section Extraction & Sélection -->
+        <section id="extraction-selection" class="extraction-selection-section">
+            <div class="extraction-selection-content">
+                <h2>Extraction & Sélection</h2>
+                <p>
+                    Notre projet se concentre spécifiquement sur la mise en œuvre de deux techniques avancées : l'Ensemble Feature Extractor et l'Ensemble Selection. L'Ensemble Feature Extractor vise à associer plusieurs vecteurs caractéristiques obtenus à partir de différents extracteurs, afin d'exploiter pleinement les informations disponibles dans les signaux EEG. Parallèlement, l'Ensemble Selection sélectionnera les classifieurs les plus pertinents parmi ceux générés par diverses méthodes de machine learning, optimisant ainsi la performance globale de la classification. Lors de nos travaux, nous avons identifié plusieurs défis majeurs à surmonter. Premièrement, il est crucial de choisir les méthodes d'extraction de caractéristiques les plus appropriées, telles que l'Analyse en Composantes Principales (PCA) ou les réseaux de neurones convolutionnels (CNN). Ensuite, il faut développer des techniques efficaces pour combiner ces caractéristiques de manière à maximiser l'information exploitable. Enfin, la sélection des algorithmes de machine learning les plus performants nécessite une évaluation rigoureuse basée sur des métriques telles que l'accuracy et le recall. Pour atteindre nos objectifs, notre méthodologie se déroule en plusieurs étapes distinctes. Dans un premier temps, nous mettrons en œuvre et testerons diverses méthodes d'extraction de caractéristiques. Ensuite, nous utiliserons ces caractéristiques pour alimenter des modèles de machine learning, en appliquant des techniques d'Ensemble Selection pour identifier les classifieurs les plus performants. Les performances des algorithmes seront évaluées de manière systématique, et les résultats obtenus serviront à affiner notre approche.
+                </p>
             </div>
         </section>
 
-        <!-- Recognition Section -->
+        <!-- Section Détection -->
         <section id="recognition" class="recognition-section">
             <div class="recognition-content">
-                <h2>Recognition of Epilepsy</h2>
+                <h2>Détection de l'épilepsie</h2>
                 <div id="recognition-explanation">
-                    <p>Select a file (?) to detect if the condition is:</p>
+                    <p>Sélectionnez un fichier pour détecter si l'état est :</p>
                     <ul>
-                        <li>Inter-ictal (between seizures)</li>
-                        <li>Pre-ictal (30 minutes before the seizure)</li>
-                        <li>Ictal (during the seizure)</li>
+                        <li>Inter-ictal (entre les crises)</li>
+                        <li>Pre-ictal (30 minutes avant la crise)</li>
+                        <li>Ictal (pendant la crise)</li>
                     </ul>
                 </div>
                 
                 <span class="file-upload">
                     <label for="fileInput" class="custom-button">
-                        Insérer vos données&nbsp;&nbsp;&nbsp;      
+                        Insérez vos données&nbsp;&nbsp;&nbsp;      
                         <img src="https://img.icons8.com/?size=100&id=77787&format=png&color=000000" class="icon" alt="icon" />
                     </label>
                     <input type="file" id="fileInput" />
-                    <button class="upload-button" onclick="loadFiles()">Load Data</button>
+                    <button class="upload-button" onclick="loadFiles()">Charger les données</button>
                 </span>
 
                 <div class="file-list" id="fileList"></div>
 
                 <div class="error-message" id="errorMessage"></div>
                 <div id="uploadedResults">
-                    <h3>Uploaded File Results</h3>
+                    <h3>Résultats du fichier téléchargé</h3>
                     <div id="resultsDisplay">
                         <div class="currency-result">70</div>
                         <div class="percentage-result">
@@ -115,11 +113,11 @@
             </div>
         </section>
 
-        <!-- Footer Section -->
+        <!-- Section pied de page -->
         <footer class="footer">
             <a href="https://www.esiee.fr" class="custom-button">ESIEE PARIS</a>
             <br><br>
-            <p>Copyright © 2024 | All Rights Reserved.</p>
+            <p>Copyright © 2024 | Tous droits réservés.</p>
         </footer>
     </main>
     <script src="../js/script.js"></script>

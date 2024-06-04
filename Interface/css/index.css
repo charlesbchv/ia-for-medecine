@@ -35,7 +35,6 @@ ul {
     margin-left: 40px;
 }
 
-
 /* Header Styles */
 .header {
     position: fixed;
@@ -49,7 +48,7 @@ ul {
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 100;
-    transition: top 0.3s ease-in-out; /* Smooth transition */
+    transition: top 0.3s ease-in-out;
 }
 
 .logo {
@@ -172,104 +171,68 @@ ul {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Background Section Styles */
-.background-section {
+/* Data Section Styles */
+.data-section {
     padding: 60px 5%;
-    background-color: #e9ecef;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.data-section .data-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.data-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.data-section .data-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.data-section .data-link:hover {
+    text-decoration: underline;
+}
+
+/* Extraction & Selection Section Styles */
+.extraction-selection-section {
+    padding: 60px 5%;
+    background-color: #beb7ec;
     color: #000;
     text-align: left;
 }
 
-
-.background-section p, .background-section ul {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-
-
-/* Extraction Section Styles */
-.extraction-section, .selection-section {
-    position: relative;
-    padding: 60px 5%;
-    color: #ffffff;
-    text-align: center;
-    overflow: hidden;
-}
-
-.extraction-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../pictures/Background - extraction.webp') no-repeat center center/cover;
-    filter: blur(8px); /* Adjust the blur value as needed */
-    z-index: -1;
-}
-
-.extraction-content {
+.extraction-selection-content {
     max-width: 800px;
     margin: 0 auto;
-    position: relative;
-    z-index: 1;
 }
 
-.extraction-content h2 {
+.extraction-selection-content h2 {
     font-size: 36px;
     margin-bottom: 20px;
+    text-align: center; /* Add this line to center the title */
 }
 
-.extraction-content p {
+
+.extraction-selection-content p {
     font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.extraction-content h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.extraction-results {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    color: #000000;
-}
-
-.result-box {
-    flex: 1 1 calc(50% - 40px);
-    text-align: center;
-    background: #fff;
+    line-height: 1.6;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.result-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.result-box img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.result-box p {
-    font-size: 16px;
-    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Recognition Section Styles */
 .recognition-section {
     padding: 60px 5%;
-    background-color: #ffffff; /* White background */
-    color: #000000; /* Black text */
+    background-color: #ffffff;
+    color: #000000;
     text-align: center;
 }
 
@@ -296,7 +259,7 @@ ul {
 #uploadedResults {
     display: none;
     margin-top: 20px;
-    background: #f8f9fa; /* Light background for results */
+    background: #f8f9fa;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -316,7 +279,6 @@ ul {
     font-weight: bold;
     color: green;
 }
-
 
 .prediction-result .error {
     color: red;
@@ -341,9 +303,9 @@ ul {
     justify-content: center;
     transition: background 0.3s;
     cursor: pointer;
-    min-width: 200px; /* Ensures buttons are the same size */
-    height: 50px; /* Ensures buttons have the same height */
-    vertical-align: middle; /* Aligns buttons vertically */
+    min-width: 200px;
+    height: 50px;
+    vertical-align: middle;
 }
 
 .custom-button img {
@@ -356,7 +318,7 @@ ul {
     background: #007bff;
     color: #fff;
     border: none;
-    margin-left: 10px; /* Space between the buttons */
+    margin-left: 10px;
 }
 
 .upload-button:hover {
@@ -427,7 +389,7 @@ ul {
 /* File Input and Label Styles */
 .file-upload {
     display: flex;
-    justify-content: center; /* Center the file upload section */
+    justify-content: center;
     align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -469,15 +431,15 @@ ul {
 .footer {
     text-align: center;
     padding: 20px;
-    background-color: #e9ecef; /* Adjust this color as needed */
+    background-color: #e9ecef;
     color: #2e2d2d;
     width: 100%;
-    flex-shrink: 0; /* Ensure the footer does not shrink */
+    flex-shrink: 0;
 }
 
 .footer .custom-button {
     display: inline-block;
-    background-color: #333; /* Adjust this color as needed */
+    background-color: #333;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -488,5 +450,5 @@ ul {
 }
 
 .footer .custom-button:hover {
-    background-color: #555; /* Adjust this color as needed */
+    background-color: #555;
 }
