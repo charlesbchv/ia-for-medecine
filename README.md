@@ -1,5 +1,16 @@
 # IA pour la Détection des États Épileptiques
 
+<p align="center"><a href="https://www.mcgill.ca/neuro/fr/recherche/groupes-de-recherche/epilepsie" target="_blanc"><img src="https://www.frcneurodon.org/wp-content/uploads/2020/09/banni%C3%A8re.png"></a></p>
+<p align="center"> 
+<img alt="GitHub language count" src="https://img.shields.io/github/languages/count/charlesbchv/ia-for-medecine?style=plastic&color=blue">
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/charlesbchv/ia-for-medecine?style=plastic&color=violet">
+<img alt="Last Commit" src="https://img.shields.io/github/last-commit/charlesbchv/ia-for-medecine?style=plastic&color=yellow">
+<img alt="Bower" src="https://img.shields.io/bower/l/space?style=plastic&color=acre">
+</p>
+<p align="center">
+   <img alt="ViewCount" src="https://views.whatilearened.today/views/github/charlesbchv/ia-for-medecine.svg">
+</p>
+
 ## Contexte et Problématique
 
 L'électroencéphalographie (EEG) est l'un des outils les plus utilisés pour étudier l'activité électrique du cerveau en raison de l'absence d'effets secondaires. L'EEG fournit des informations essentielles pour prédire les états épileptiques. La classification de ces états nécessite des approches sophistiquées basées sur des algorithmes de Machine Learning afin d'obtenir les meilleures performances de prédiction.
