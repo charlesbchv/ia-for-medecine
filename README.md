@@ -1,4 +1,4 @@
-# IA pour la Détection des États Épileptiques
+# IA pour la Prédiction des États Épileptiques
 
 <p align="center"><a href="https://www.mcgill.ca/neuro/fr/recherche/groupes-de-recherche/epilepsie" target="_blanc"><img src="https://www.frcneurodon.org/wp-content/uploads/2020/09/banni%C3%A8re.png"></a></p>
 <p align="center"> 
