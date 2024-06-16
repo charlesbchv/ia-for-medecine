@@ -75,7 +75,8 @@ pip install -r requirements.txt
 
 ## Résultats
 
-Les résultats des différentes expérimentations seront sauvegardés dans le répertoire Ress/. Vous pouvez consulter les rapports de classification, les matrices de confusion, et les scores de précision.
+Les résultats des différentes expérimentations sont dans l'état de l'art.
+Vous pouvez consulter les rapports de classification, les matrices de confusion, et les scores de précision.
 
 ## Site Web
 
