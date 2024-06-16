@@ -45,10 +45,10 @@ Définition d'une méthodologie basée sur l’ensemble d’extracteurs de carac
 
 ## Structure du Projet
 
-- `data/` : Contient les fichiers de données EEG utilisés pour l'entraînement et les tests.
-- `notebooks/` : Contient des notebooks Jupyter pour l'analyse exploratoire des données et les prototypes de modèles.
-- `scripts/` : Contient les scripts Python pour l'entraînement des modèles et l'évaluation des performances.
-- `models/` : Contient les modèles entraînés et les extracteurs de caractéristiques.
+- `Ressources/Dataset/` : Contient les fichiers de données EEG utilisés pour l'entraînement et les tests.
+- `Classification/` : Contient des notebooks Jupyter pour l'analyse exploratoire des données, ensemble selection pour les prototypes de modèles.
+- `Feature-Extraction/` : Contient des notebooks Jupyter d'extractions des caracteristiques des données.
+- `Ressources/models/` : Contient les modèles entraînés et les extracteurs de caractéristiques.
 
 ## Installation
 
@@ -73,32 +73,14 @@ source env/bin/activate  # Sur Windows, utilisez `env\Scripts\activate`
 pip install -r requirements.txt
 ```
 
-## Utilisation
-
-1. Prétraiter les données :
-
-```bash
-python scripts/preprocess_data.py
-```
-2. Entraîner le modèle CNN et extraire les caractéristiques :
-```bash
-python scripts/train_cnn.py
-```
-
-3. Entraîner le modèle Random Forest avec les caractéristiques extraites :
-```bash
-python scripts/train_random_forest.py
-```
-
-4. Évaluer les performances du modèle :
-
-```bash
-python scripts/evaluate_model.py
-```
-
 ## Résultats
 
-Les résultats des différentes expérimentations seront sauvegardés dans le répertoire results/. Vous pouvez consulter les rapports de classification, les matrices de confusion, et les scores de précision.
+Les résultats des différentes expérimentations seront sauvegardés dans le répertoire Ress/. Vous pouvez consulter les rapports de classification, les matrices de confusion, et les scores de précision.
+
+## Site Web
+
+Afin de lancer le site web, allez dans le dossier Interface/html et ouvrir index.html, vous serez redirigé sur le siteWeb.
+Pour plus d'informations, sur le comment lancer le serveur, consulter requirements.txt.
 
 ## Contributeurs
 
